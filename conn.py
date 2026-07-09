@@ -6,3 +6,6 @@ import argpard
 
 #this the magic libary for linux low level python wrapper functions
 from pytun import TunTapDevice, IFF_FUN, IFF_NO_PI
+
+#main function for creating the connection
+def create_tun_device()
