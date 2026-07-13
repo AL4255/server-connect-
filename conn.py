@@ -8,4 +8,15 @@ import argpard
 from pytun import TunTapDevice, IFF_FUN, IFF_NO_PI
 
 #main function for creating the connection
-def create_tun_device()
+def create_tun_device(ip_addr: str, netmask:str = "255.255.255.0", mtu: int = 1400);
+  tun = TunTapDevice(flags=IFF_TUN  | IFF_NO_PI)
+  tun.addr = ip_addr
+  tun.netmask = netmask
+  tun.mtu = mtu
+  tun.up
+  return tun()
+
+
+ddef
+
+
