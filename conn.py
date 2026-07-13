@@ -17,6 +17,7 @@ def create_tun_device(ip_addr: str, netmask:str = "255.255.255.0", mtu: int = 14
   return tun()
 
 
-ddef
+def create_udp_socket(listen_port: int):
+  sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
