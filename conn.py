@@ -29,6 +29,12 @@ def create_udp_socket(listen_port: int):
 def main():
   tun - create_tun_device("10.8.0.1")
   sock = create_udp_socket(5555)
-  peer_addr = none 
+  peer_addr = None
+
+  try: 
+    while True:
+      ready, _, _ = select.select([tun,sock], [], [])
+
+      id tun in ready:
 
 
