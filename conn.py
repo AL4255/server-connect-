@@ -46,5 +46,13 @@ def main():
           if peer_addr is None:
               print(f"Client connecte from {addr}")
           peer_addr = addr
+          os.write(tun.fileno(), data)
+
+
+  finally:
+    tun.down()
+    sock.close()
+if __name__ == "__main__"
+    main()
 
 
