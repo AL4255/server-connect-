@@ -35,6 +35,16 @@ def main():
     while True:
       ready, _, _ = select.select([tun,sock], [], [])
 
-      id tun in ready:
+      if tun in ready:
+          packet = os.read(tun.fileno(), tun.mtu + 100)
+          print(f"Got {len(packet)} bytes from TUN")
+          if peer_addr:
+            sock.sendto(packet, peer_addr)
+
+      if socl in ready:
+          data, addr = sock.recvfrom(tun.mtu + 100)
+          if peer_addr is None:
+              print(f"Client connecte from {addr}")
+          peer_addr = addr
 
 
